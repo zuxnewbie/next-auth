@@ -2,10 +2,13 @@ import NextAuth, { DefaultSession } from "next-auth";
 import { JWT } from "next-auth/jwt"
 
 interface IUser {
-    _id: string;
-    name: string;
-    email: string;
-    access_token: string,
+    user: {
+        _id: string;
+        name: string;
+        email: string;
+    }
+    access_token: string;
+
     // isVerify: boolean,
     // type: string;
     // role: string;
@@ -32,6 +35,5 @@ declare module "next-auth" {
         access_expire: number;
         error: string;
     }
-
 
 }
